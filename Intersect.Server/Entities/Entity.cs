@@ -793,11 +793,15 @@ namespace Intersect.Server.Entities
 
                     if (oldMaps != null)
                     {
-                        foreach (var map in oldMaps)
+                        foreach (var map in oldMaps.ToArray())
                         {
                             if (newMaps == null || !newMaps.Contains(map))
                             {
-                                PacketSender.SendEntityLeaveMap(this, map.Id);
+                                PacketSender.SendEntityLeaveMap(this, oldMap.Id);
+                                if (this is Player)
+                                {
+                                    var a = true;
+                                }
                             }
                         }
                     }
