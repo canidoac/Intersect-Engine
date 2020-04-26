@@ -133,9 +133,8 @@ namespace Intersect.Server.Core
                         {
                             ThreadConsole.Abort();
                         }
-                        catch (ThreadAbortException threadAbortException)
+                        catch (ThreadAbortException ex)
                         {
-                            Log.Error(threadAbortException, $"{nameof(ThreadConsole)} aborted.");
                         }
                     }
                 }
@@ -149,9 +148,8 @@ namespace Intersect.Server.Core
                         {
                             ThreadLogic.Abort();
                         }
-                        catch (ThreadAbortException threadAbortException)
+                        catch (ThreadAbortException ex)
                         {
-                            Log.Error(threadAbortException, $"{nameof(ThreadLogic)} aborted.");
                         }
                     }
                 }
